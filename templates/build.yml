@@ -1,0 +1,10 @@
+parameters:
+  buildConfiguration: 'Release'
+
+  displayName: 'Build the project - ${{ parameters.buildConfiguration }}'
+
+  arguments: '--no-restore --configuration ${{ parameters.buildConfiguration }}'
+
+  displayName: 'Publish the project - ${{ parameters.buildConfiguration }}'
+
+  arguments: '--no-build --configuration ${{ parameters.buildConfiguration }} --output $(Build.ArtifactStagingDirectory)/${{ parameters.buildConfiguration }}'
